@@ -4,6 +4,8 @@ A Squid proxy installer with username and password authentication
 
 ## To Install on Centos7 ##
 
+Login as root
+
 yum install wget
 
 wget https://raw.githubusercontent.com/sibuk76/proxy/master/spi
