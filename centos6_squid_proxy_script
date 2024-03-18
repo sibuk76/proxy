@@ -2,7 +2,7 @@
 
 PROXY_USER=user
 PROXY_PASS=password
-PROXY_PORT=3128
+PROXY_PORT=25061
 
 # Clear the repository index caches
 yum clean all
