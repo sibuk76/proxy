@@ -149,7 +149,7 @@ ubt ()	{
 	# Downloading Squid configuration
 	wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/sibuk76/proxy/master/spi-ubuntu.conf --no-check-certificate
 	# Copying squid.conf from init to init.d for startup script
-	cp /etc/init/squid.conf /etc/init.d/squid
+	# cp /etc/init/squid.conf /etc/init.d/squid
 	# Creating empty blacklist.acl file for further blacklisting entries
 	touch /etc/squid/blacklist.acl	
 	# Restarting Squid and enabling its service
@@ -171,7 +171,7 @@ ubt_ip ()	{
 	# Downloading Squid configuration
 	wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/sibuk76/proxy/master/spi-ubuntu_ip_auth.conf --no-check-certificate
 	# Copying squid.conf from init to init.d for startup script
-	cp /etc/init/squid.conf /etc/init.d/squid
+	# cp /etc/init/squid.conf /etc/init.d/squid
 	# Creating empty blacklist.acl file for further blacklisting entries
 	touch /etc/squid/blacklist.acl
 	# Restarting Squid and enabling its service
@@ -193,7 +193,7 @@ ubt_null ()	{
 	# Downloading Squid configuration
 	wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/sibuk76/proxy/master/spi-ubuntu_no_auth.conf --no-check-certificate
 	# Copying squid.conf from init to init.d for startup script
-	cp /etc/init/squid.conf /etc/init.d/squid
+	# cp /etc/init/squid.conf /etc/init.d/squid
 	# Creating empty blacklist.acl file for further blacklisting entries
 	touch /etc/squid/blacklist.acl
 	# Restarting Squid and enabling its service
