@@ -145,15 +145,15 @@ ubt ()	{
 	# Asking user to set a username via read and writing it into $usrn
 	read -e -p "Your desired username: " usrn
 	# Creating user with username from $usrn and asking user to set a password
-	htpasswd -c /etc/squid3/passwd $usrn
+	htpasswd -c /etc/squid/passwd $usrn
 	# Downloading Squid configuration
-	wget -O /etc/squid3/squid.conf https://raw.githubusercontent.com/sibuk76/proxy/master/spi-ubuntu.conf --no-check-certificate
-	# Copying squid3.conf from init to init.d for startup script
-	cp /etc/init/squid3.conf /etc/init.d/squid3
+	wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/sibuk76/proxy/master/spi-ubuntu.conf --no-check-certificate
+	# Copying squid.conf from init to init.d for startup script
+	cp /etc/init/squid.conf /etc/init.d/squid
 	# Creating empty blacklist.acl file for further blacklisting entries
-	touch /etc/squid3/blacklist.acl	
+	touch /etc/squid/blacklist.acl	
 	# Restarting Squid and enabling its service
-	service squid3 restart && update-rc.d squid3 defaults
+	service squid restart && update-rc.d squid defaults
 	# Running function firew2
 	firew2
 }
@@ -169,13 +169,13 @@ ubt_ip ()	{
 	# Creating user with username from $usrn and asking user to set a password
 	# htpasswd -c /etc/squid3/passwd $usrn
 	# Downloading Squid configuration
-	wget -O /etc/squid3/squid.conf https://raw.githubusercontent.com/sibuk76/proxy/master/spi-ubuntu_ip_auth.conf --no-check-certificate
-	# Copying squid3.conf from init to init.d for startup script
-	cp /etc/init/squid3.conf /etc/init.d/squid3
+	wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/sibuk76/proxy/master/spi-ubuntu_ip_auth.conf --no-check-certificate
+	# Copying squid.conf from init to init.d for startup script
+	cp /etc/init/squid.conf /etc/init.d/squid
 	# Creating empty blacklist.acl file for further blacklisting entries
-	touch /etc/squid3/blacklist.acl
+	touch /etc/squid/blacklist.acl
 	# Restarting Squid and enabling its service
-	service squid3 restart && update-rc.d squid3 defaults
+	service squid restart && update-rc.d squid defaults
 	# Running function firew2
 	firew2
 }
@@ -189,15 +189,15 @@ ubt_null ()	{
 	# Asking user to set a username via read and writing it into $usrn
 	# read -e -p "Your desired username: " usrn
 	# Creating user with username from $usrn and asking user to set a password
-	# htpasswd -c /etc/squid3/passwd $usrn
+	# htpasswd -c /etc/squid/passwd $usrn
 	# Downloading Squid configuration
-	wget -O /etc/squid3/squid.conf https://raw.githubusercontent.com/sibuk76/proxy/master/spi-ubuntu_no_auth.conf --no-check-certificate
-	# Copying squid3.conf from init to init.d for startup script
-	cp /etc/init/squid3.conf /etc/init.d/squid3
+	wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/sibuk76/proxy/master/spi-ubuntu_no_auth.conf --no-check-certificate
+	# Copying squid.conf from init to init.d for startup script
+	cp /etc/init/squid.conf /etc/init.d/squid
 	# Creating empty blacklist.acl file for further blacklisting entries
-	touch /etc/squid3/blacklist.acl
+	touch /etc/squid/blacklist.acl
 	# Restarting Squid and enabling its service
-	service squid3 restart && update-rc.d squid3 defaults
+	service squid restart && update-rc.d squid defaults
 	# Running function firew2
 	firew2
 }
