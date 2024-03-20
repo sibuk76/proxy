@@ -136,12 +136,56 @@ deb8 ()	{
 	firew2
 }
 
-# Function for Ubuntu User Auth
-ubt ()	{
+# Function for Ubuntu18 User Auth
+ubt18 ()	{
 	# Updating package database
 	apt-get update
 	# Installing necessary packages (Squid, apache2-utils for htpassword and dependencies)
 	apt-get install nano dos2unix apache2-utils squid3 -y
+	# Asking user to set a username via read and writing it into $usrn
+	read -e -p "Your desired username: " usrn
+	# Creating user with username from $usrn and asking user to set a password
+	htpasswd -c /etc/squid/passwd $usrn
+	# Downloading Squid configuration
+	wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/sibuk76/proxy/master/spi-ubuntu.conf --no-check-certificate
+	# Copying squid.conf from init to init.d for startup script
+	# cp /etc/init/squid.conf /etc/init.d/squid
+	# Creating empty blacklist.acl file for further blacklisting entries
+	touch /etc/squid/blacklist.acl	
+	# Restarting Squid and enabling its service
+	service squid restart && update-rc.d squid defaults
+	# Running function firew2
+	firew2
+}
+
+# Function for Ubuntu20 User Auth
+ubt20 ()	{
+	# Updating package database
+	apt-get update
+	# Installing necessary packages (Squid, apache2-utils for htpassword and dependencies)
+	apt-get install nano dos2unix apache2-utils squid -y
+	# Asking user to set a username via read and writing it into $usrn
+	read -e -p "Your desired username: " usrn
+	# Creating user with username from $usrn and asking user to set a password
+	htpasswd -c /etc/squid/passwd $usrn
+	# Downloading Squid configuration
+	wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/sibuk76/proxy/master/spi-ubuntu.conf --no-check-certificate
+	# Copying squid.conf from init to init.d for startup script
+	# cp /etc/init/squid.conf /etc/init.d/squid
+	# Creating empty blacklist.acl file for further blacklisting entries
+	touch /etc/squid/blacklist.acl	
+	# Restarting Squid and enabling its service
+	service squid restart && update-rc.d squid defaults
+	# Running function firew2
+	firew2
+}
+
+# Function for Ubuntu22 User Auth
+ubt22 ()	{
+	# Updating package database
+	apt-get update
+	# Installing necessary packages (Squid, apache2-utils for htpassword and dependencies)
+	apt-get install nano dos2unix apache2-utils squid -y
 	# Asking user to set a username via read and writing it into $usrn
 	read -e -p "Your desired username: " usrn
 	# Creating user with username from $usrn and asking user to set a password
