@@ -266,8 +266,12 @@ case $1 in
 		deb;; # Debian "Squeeze" 6 and Debian "Wheezy" 7
 	'-jessie') # If option "-jessie" run function deb8
 		deb8;; # Debian "Jessie" 8
-	'-ubuntu') # If option "-ubuntu" run function ubt
+	'-ubuntu18') # If option "-ubuntu" run function ubt
 		ubt;; # Ubuntu User
+        '-ubuntu20') # If option "-ubuntu" run function ubt
+		ubt20;; # Ubuntu User
+        '-ubuntu22') # If option "-ubuntu" run function ubt
+		ubt22;; # Ubuntu User
 	'-ubuntu_ip') # If option "-ubuntu_ip" run function ubt_ip
 		ubt_ip;; # Ubuntu Ip		
 	'-ubuntu_null') # If option "-ubuntu" run function ubt_null
