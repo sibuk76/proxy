@@ -207,11 +207,11 @@ ubt_ip ()	{
 	# Updating package database
 	apt-get update
 	# Installing necessary packages (Squid, apache2-utils for htpassword and dependencies)
-	apt-get install nano dos2unix apache2-utils squid3 -y
+	apt-get install nano dos2unix apache2-utils squid -y
 	# Asking user to set a username via read and writing it into $usrn
 	# read -e -p "Your desired username: " usrn
 	# Creating user with username from $usrn and asking user to set a password
-	# htpasswd -c /etc/squid3/passwd $usrn
+	# htpasswd -c /etc/squid/passwd $usrn
 	# Downloading Squid configuration
 	wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/sibuk76/proxy/master/spi-ubuntu_ip_auth.conf --no-check-certificate
 	# Copying squid.conf from init to init.d for startup script
