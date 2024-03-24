@@ -278,13 +278,10 @@ dinfo ()	{
 	echo "Example (Debian 8): bash spi -jessie"
 	echo ""
 	echo "Options:"
-	echo "-rhel5   -- RHEL 5 Linux distributions such as Red Hat 5, CentOS 5 and etc"
-	echo "-rhel6   -- RHEL 6 Linux distributions such as Red Hat 6, CentOS 6 and etc"
 	echo "-rhel7   -- RHEL 7 Linux distributions such as Red Hat 7, CentOS 7 and etc"
-	echo "-debian  -- Debian Squeeze 6 & Wheezy 7"
-	echo "-jessie  -- Debian Jessie 8"
-	echo "-ubuntu  -- Ubuntu"
-	echo "-fedora  -- Fedora"
+	echo "-ubuntu18  -- Ubuntu18"
+	echo "-ubuntu20  -- Ubuntu20"
+	echo "-ubuntu22  -- Ubuntu22"
 	echo ""
 	echo "How to add more users:"
 	echo "https://github.com/hidden-refuge/spi/wiki/User-management"
@@ -293,9 +290,8 @@ dinfo ()	{
 	echo "https://github.com/hidden-refuge/spi/wiki/Domain-blacklist"
 	echo ""
 	echo ""
-	echo "(C) 2014 - 2017 by Hidden Refuge"
-	echo "GitHub Repo: https://github.com/hidden-refuge/spi"
-	echo "SPI Wiki: https://github.com/hidden-refuge/spi/wiki"
+	echo "(C) 2014 - 2024 by SibUK"
+	echo "GitHub Repo: https://github.com/sibuk76/"
 }
 
 # Checking $1 and running corresponding function
